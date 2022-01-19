@@ -13,14 +13,14 @@ useEffect(async () => {
   const result = await  axios(`https://api.nasa.gov/planetary/apod?api_key=${APIKEY}&count=10`);
   setData(result.data);
   console.log(result.data)
+  const likes = localStorage.getItem('likes') || '';
 },[]);
 
 
   return (
     <div className="App ">
       {data.map((singleResponse)=><DisplayCard key={singleResponse.date} data={singleResponse}/>)}
-  </div>
-  
+    </div>
   );
 }
 
