@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.card-img-top{
+  padding: 35px;
+}
+
+#price{
+  padding-left: 3px;
+}
+
+.spinner-border {
+  margin-left: 1em;
+}
+
+.card {
+  border-radius: 2.25rem;
+  height: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

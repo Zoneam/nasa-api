@@ -1,34 +1,31 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import styled from 'styled-components';
-const DisplayCard = () => {
+import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol, MDBBtn } from 'mdb-react-ui-kit';
+
+const DisplayCard = ({data}) => {
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image="https://blog.mystart.com/wp-content/uploads/IN_Gecko_Lizard_00.jpeg"
-        alt="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarcticasss
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Like</Button>
-      </CardActions>
-    </Card>
+
+ <MDBCard >
+      <MDBRow className='g-0'>
+        <MDBCol md='4'>
+          {data.url.includes('youtube')?<MDBCardImage component="iframe" src={data.url} alt={data.title} fluid/>:<MDBCardImage  component="img" src={data.url} alt={data.title} fluid/>}
+        </MDBCol>
+        <MDBCol md='8'>
+          <MDBCardBody>
+            <MDBCardTitle>{data.title}</MDBCardTitle>
+            <MDBCardText>
+            {data.explanation}
+            
+            </MDBCardText>
+            
+          </MDBCardBody>
+        </MDBCol>
+      </MDBRow>
+    </MDBCard> 
+    
   );
 }
 
 export default DisplayCard;
+
+

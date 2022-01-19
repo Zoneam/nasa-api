@@ -2,7 +2,7 @@ import './App.css';
 import DisplayCard from './components/Card';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-const API = "QDEUlIuFI1qnLu24hs2yikNPuWQdpXAAZVVuomhH"
+const APIKEY = "QDEUlIuFI1qnLu24hs2yikNPuWQdpXAAZVVuomhH"
 
 
 function App() {
@@ -10,17 +10,17 @@ function App() {
 const [data, setData] = useState([]);
 
 useEffect(async () => {
-  const result = await  axios('https://api.nasa.gov/planetary/apod?api_key=QDEUlIuFI1qnLu24hs2yikNPuWQdpXAAZVVuomhH&count=10');
+  const result = await  axios(`https://api.nasa.gov/planetary/apod?api_key=${APIKEY}&count=10`);
   setData(result.data);
   console.log(result.data)
 },[]);
 
 
   return (
-    <div className="App">
-      {data.map((singleResponse)=><DisplayCard key={singleResponse.date} data={singleResponse}/>)
-  }
-    </div>
+    <div className="App ">
+      {data.map((singleResponse)=><DisplayCard key={singleResponse.date} data={singleResponse}/>)}
+  </div>
+  
   );
 }
 
