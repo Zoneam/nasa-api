@@ -27,14 +27,14 @@ useEffect(async () => {
   return (
     <div className="App ">
       <div className="col text-center num-res-container">
-      <p className="text-sm-start">Minimum number of results is 1 Maximum is 25</p>
+      <p className="text-sm-start">Minimum number of results is 1 Maximum 25</p>
       <div className="input-group mb-3">
       <div className="input-group-prepend">
         <span className="input-group-text bg-warning text-white" id="inputGroup-sizing-default">Number of results</span>
       </div>
       <input type="text" className="form-control" type="number" id="num-results" min="1" max="25" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" onChange={handleInput}/>
       </div>
-      <button type="button" className="btn btn-info rand-btn" onClick={setRefresh}>Get Results</button>
+      <button type="button" className="btn btn-info rand-btn" onClick={setRefresh}>Update Results</button>
       </div>
       {data.map((singleResponse)=><DisplayCard key={singleResponse.date} data={singleResponse}/>)}
     </div>
