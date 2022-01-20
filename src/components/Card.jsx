@@ -36,7 +36,6 @@ const DisplayCard = ({data}) => {
           {like?<i className="bi bi-hand-thumbs-up-fill float-right mr-2 mb-2" style={{"color": "red", "fontSize":"2rem" }} onClick={handleLike}></i>:<i className="bi bi-hand-thumbs-down-fill float-right mr-2 mb-2" style={{"color": "blue", "fontSize":"2rem" }} onClick={handleLike}></i>}
         </MDBCol>
       </MDBRow>
-      
     </MDBCard> 
     
   );
