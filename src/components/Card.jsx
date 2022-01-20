@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import './card.css';
 
 const DisplayCard = ({data}) => {
   const { title , url, explanation } = data;
@@ -33,7 +34,7 @@ const DisplayCard = ({data}) => {
             {explanation}
             </MDBCardText>
           </MDBCardBody>
-          {like?<i className="bi bi-hand-thumbs-up-fill float-right mr-2 mb-2" style={{"color": "red", "fontSize":"2rem" }} onClick={handleLike}></i>:<i className="bi bi-hand-thumbs-down-fill float-right mr-2 mb-2" style={{"color": "blue", "fontSize":"2rem" }} onClick={handleLike}></i>}
+          {like?<i className="bi bi-hand-thumbs-up-fill float-right mr-2 mb-2 thumb" style={{"color": "green", "fontSize":"2rem" }} onClick={handleLike}></i>:<i className="bi bi-hand-thumbs-down-fill float-right mr-2 mb-2 thumb" style={{"color": "red", "fontSize":"2rem" }} onClick={handleLike}></i>}
         </MDBCol>
       </MDBRow>
     </MDBCard> 
