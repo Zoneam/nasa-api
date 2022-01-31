@@ -2,6 +2,8 @@ import './App.css';
 import DisplayCard from './components/Card';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+
+
 const APIKEY = "QDEUlIuFI1qnLu24hs2yikNPuWQdpXAAZVVuomhH"
 
 function App() {
@@ -13,7 +15,7 @@ const [refresh, setRefresh] = useState(true);
 const handleInput = (e)=>{
 if (e.target.value > 25){
   e.target.value = 25;
-} else if (e.target.value < 1 && e.target.value!=='' ){
+} else if (e.target.value < 1 && e.target.value !== '' ){
   e.target.value = 1;
 }
 }
@@ -28,6 +30,8 @@ useEffect(async () => {
     <div className="App ">
       <div className="col text-center num-res-container">
       <p className="text-sm-start">Minimum number of results is 1 Maximum 25</p>
+
+
       <div className="input-group mb-3">
       <div className="input-group-prepend">
         <span className="input-group-text bg-warning text-white" id="inputGroup-sizing-default">Number of results</span>
